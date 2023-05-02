@@ -1,0 +1,128 @@
+body {
+    background-color: #f7f7f7;
+    margin: 0;
+    font-family: 'Noto Serif JP', serif !important;
+    /* font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Roboto', sans-serif; */
+}
+
+html {
+    font-size: 62.5%;
+    /* 16px = 10px*/
+    background-color: #f7f7f7;
+}
+
+header {
+    background-color: #f7f7f7;
+    padding-bottom: 2em;
+}
+
+main {
+    background-color: #f7f7f7;
+
+}
+
+footer {
+    height: 30em;
+    background-color: #f7f7f7;
+    color: rgb(35, 35, 35);
+    margin-top: -1em;
+    /* remove white gap between main and footer*/
+
+}
+
+picture img {
+    width: 100%;
+}
+
+
+/* table */
+table {
+    font-family: arial, sans-serif;
+    width: 100% ;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+.fa-minus{
+    color: red;
+}
+
+
+
+
+
+
+/* nav */
+
+.topnav {
+    display: grid;
+    grid-template-columns: 60% 40% ;
+    padding: 4em 0 1em 0;
+}
+
+.left-menu,
+.right-menu {
+    padding-top: 1.6em;
+}
+
+.left-menu {
+    display: block;
+    padding-left: 5em;
+}
+
+.logo {
+    color: #e7b100;
+    /* text-shadow: 1px 1px 10px #e7b100, 1px 1px 4px #e7b100; */
+    font-size: 2.5em;
+    font-weight: 100;
+    font-family: 'Dancing Script', cursive; 
+}
+
+.topnav a {
+    color: rgb(35, 35, 35);
+    font-size: 1.2em;
+    padding: 1em;
+}
+
+.topnav a:hover {
+    color: rgb(35, 35, 35);
+    text-decoration: none;
+    transition: 0.8s ease;
+}
+
+
+
+/* index  */
+
+.select-div {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.form {
+    margin: auto;
+    max-width: 90em;
+    background-color: #f7f7f7;
+    padding: 3em 2em;
+}
+
+.form label {
+    font-size: 1.4em;
+    margin-top: 0.5em;
+    color: rgb(35, 35, 35);
+    width: 100%;
+}
+
+.form select {
+    font-size: 1.2em;
+    width: 13em;
+    height: 2.5em;
+}
