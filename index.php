@@ -64,8 +64,8 @@ if (isset($_SESSION['paymentcreated'])) {
 
             ?>
 
-            <input class="input-form year" type="text" name="product" id="product" placeholder="Produkt">
-            <input class="input-form year" type="text" name="amount" id="amount" placeholder="g/dl">
+            <input class="input-form year" type="text" name="product" id="product" placeholder="Produkt"><br><br>
+            <input class="input-form year" type="text" name="amount" id="amount" placeholder="g/dl"><br><br>
             <div class="select-div">
                 <div>
                     <select name="sort" id="sort">
@@ -73,14 +73,11 @@ if (isset($_SESSION['paymentcreated'])) {
                         <option value="dry">Torrt</option>
                     </select>
                 </div>
-            </div>
+            </div><br>
             <button class="add-btn" type="submit"><a>Lägg till &nbsp;<i class="fa-solid fa-plus"></i></a></button><br><br>
             <hr>
         </form>
 
-        <form method="POST" class="form-createpost">
-            <button class="bomb-btn" type="submit" value="Submit" name="submit"><a><i class="fa-solid fa-bomb"></i></a></button><br><br>
-        </form>
     </main>
 
     <footer>
