@@ -69,8 +69,8 @@ if (isset($_SESSION['paymentcreated'])) {
             <div class="select-div">
                 <div>
                     <select name="sort" id="sort">
-                        <option value="cold">Kylt</option>
-                        <option value="dry">Torrt</option>
+                        <option value="Kylt">Kylt</option>
+                        <option value="Torrt">Torrt</option>
                     </select>
                 </div>
             </div><br>
@@ -78,6 +78,26 @@ if (isset($_SESSION['paymentcreated'])) {
             <hr>
         </form>
 
+        <?php
+        //instans av klassen
+        $newinventory = new Newinventory();
+
+
+        if (isset($_POST['search'])) {
+            $search = $_POST['search'];
+
+            $list = $newinventory->findSearch($search);
+
+            if (count($list) === 0) {
+                echo "<h4> Det finns ingen '" . $search . "'.</h4>";
+            } else {
+                echo "<pre>";
+                print_r($list);
+                echo "</pre>";
+            }
+        }
+
+        ?>
     </main>
 
     <footer>
