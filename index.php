@@ -52,7 +52,7 @@ if (isset($_SESSION['paymentcreated'])) {
             if (!empty($_POST['product'])) {
 
                 $product = $_POST['product'];
-                $amount = (int)$_POST['amount'];
+                $amount = str_replace(' ', '', $_POST['amount']);
                 $sort = $_POST['sort'];
 
                 if ($newinventory->addInventory($product, $amount, $sort)) {
