@@ -73,7 +73,8 @@ class Newinventory
     //find search
     public function findSearch(string $search): array
     {
-        $sql = "SELECT * FROM inventory WHERE product='$search';";
+        // $sql = "SELECT * FROM inventory WHERE product'$search';";
+        $sql = "SELECT * FROM inventory WHERE product LIKE '$search%';";
         $result = $this->db->query($sql); //lagrar svaret från servern i $result
         return mysqli_fetch_all($result, MYSQLI_ASSOC); // lagrar i associativ array så det blir lättare att skriva ut på sidan
     }
