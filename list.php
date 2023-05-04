@@ -1,11 +1,19 @@
 <?php
 include("includes/config.php");
 ?>
+<?php
+
+//checks if post is created 
+if (isset($_SESSION['paymentcreated'])) {
+    $_SESSION['paymentcreated'] = "<h4 class='success'>Utgiften har registrerats!</h4>";
+}
+
+?>
 <!DOCTYPE html>
 <html lang="sv">
 
 <head>
-    <title>Utgifter</title>
+    <title><?php echo $pageTitl['3']; ?></title>
 
     <?php
     include("includes/head.php");
@@ -21,63 +29,8 @@ include("includes/config.php");
     </header>
     <main>
 
-        <table class="form">
-            <tr class="form">
-                <th>Produkt:</th>
-                <th>Mängd:</th>
-                <th>Plats:</th>
-                <th>Del:</th>
-            </tr>
+        <h1 class="title" style="padding:1em 0 1em 5%;">Lista</h1>
 
-            <?php
-
-            //instans av klassen
-            $newinventory = new Newinventory();
-
-            // raderar post
-            if (isset($_GET['delete'])) {
-                $id = $_GET['delete'];
-
-                if ($newinventory->deleteProduct($id)) {
-                }
-            }
-
-
-
-            $list = $newinventory->printAll();
-
-            // echo "<pre>";
-            // print_r($list);
-            // echo "</pre>";
-
-            if (count($list) === 0) {
-                $_SESSION['msg'] = "<h4> Listan är tom </h4>";
-            } else {
-                foreach ($list as $inventory) {
-                    echo "
-                        <tr class='form'>
-                            <td>" . $inventory['product'] . "</td>
-                            <td>" . $inventory['amount'] .  "</td>
-                            <td>" . $inventory['sort'] . "</td>
-                            <td> <a href='list.php?delete=" . $inventory['id'] . "'> <i class='fa-solid fa-minus'></i></a> </td>
-                        </tr>
-                    ";
-                }
-            }
-
-
-            ?>
-
-        </table>
-        <div class="form">
-            <?php
-            // print all error messeges if success not true
-            if (isset($_SESSION['msg'])) {
-                echo $_SESSION['msg'];
-                unset($_SESSION['msg']);
-            }
-            ?>
-        </div>
 
     </main>
 

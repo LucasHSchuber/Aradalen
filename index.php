@@ -13,7 +13,7 @@ if (isset($_SESSION['paymentcreated'])) {
 <html lang="sv">
 
 <head>
-    <title>Index</title>
+    <title><?php echo $pageTitl['1']; ?></title>
 
     <?php
     include("includes/head.php");
@@ -30,7 +30,8 @@ if (isset($_SESSION['paymentcreated'])) {
     <main>
 
         <form method="POST" class="form">
-            <h1 class="title">Inventory</h1>
+        <h1 class=""  style="padding-bottom:1em;">Lägg till</h1>
+
             <?php
 
             // // print all error messeges if success not true
@@ -83,17 +84,36 @@ if (isset($_SESSION['paymentcreated'])) {
         $newinventory = new Newinventory();
 
 
-        if (isset($_POST['search'])) {
+        if (isset($_POST['search']) && $_POST['search'] != "") {
             $search = $_POST['search'];
 
             $list = $newinventory->findSearch($search);
 
             if (count($list) === 0) {
-                echo "<h4> Det finns ingen '" . $search . "'.</h4>";
+                echo "<h4 style='padding:0 0 1em 5%;'> Det finns ingen '" . $search . "'.</h4>";
             } else {
-                echo "<pre>";
-                print_r($list);
-                echo "</pre>";
+                echo "
+                <h3 class='title' style='padding:0 0 1em 5%;'>Sökresultat:</h3>
+                <table class='form-list'>
+                    <tr class='form'>
+                     <th>Produkt:</th>
+                     <th>Mängd:</th>
+                     <th>Plats:</th>
+                    <th>Del:</th>
+                  </tr>";
+                foreach ($list as $inventory) {
+                    echo "
+                    
+                        <tr class='form'>
+                            <td>" . $inventory['product'] . "</td>
+                            <td>" . $inventory['amount'] .  "</td>
+                            <td>" . $inventory['sort'] . "</td>
+                            <td> <a class='delete' href='list.php?delete=" . $inventory['id'] . "'> Ta bort &nbsp; <i class='fa-solid fa-minus'></i></a> </td>
+                        </tr>
+                  
+                    ";
+                }
+                echo " </table>  ";
             }
         }
 

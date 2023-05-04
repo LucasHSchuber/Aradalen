@@ -36,25 +36,19 @@ picture img {
 }
 
 
-/* table */
-table {
-    font-family: arial, sans-serif;
-    width: 100% ;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-.fa-minus{
+
+.delete {
     color: red;
 }
 
+.delete:hover {
+    color: rgb(250, 62, 62);
+
+}
+
+.title {
+    padding-left: 5%;
+}
 
 
 
@@ -64,39 +58,36 @@ table {
 
 .topnav {
     display: grid;
-    grid-template-columns: 60% 40% ;
-    padding: 4em 0 1em 0;
+    grid-template-columns: 100%;
 }
 
-.left-menu,
-.right-menu {
-    padding-top: 1.6em;
-}
-
-.left-menu {
-    display: block;
-    padding-left: 5em;
-}
-
-.logo {
-    color: #e7b100;
-    /* text-shadow: 1px 1px 10px #e7b100, 1px 1px 4px #e7b100; */
-    font-size: 2.5em;
-    font-weight: 100;
-    font-family: 'Dancing Script', cursive; 
+.menu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .topnav a {
     color: rgb(35, 35, 35);
     font-size: 1.2em;
-    padding: 1em;
+    background-color: rgb(231, 231, 231);
+    padding: 2em;
+    transition: 0.4s ease;
+    border: 0.5px solid rgb(212, 212, 212);
 }
 
 .topnav a:hover {
+    background-color: #f7f7f7;
     color: rgb(35, 35, 35);
     text-decoration: none;
-    transition: 0.8s ease;
+    transition: 0.4s ease;
+    border: none;
+
 }
+
+.active {
+    background-color: green !important;
+}
+
 
 
 
@@ -114,11 +105,11 @@ table {
     padding: 3em 2em;
 }
 
-.form label {
-    font-size: 1.4em;
-    margin-top: 0.5em;
-    color: rgb(35, 35, 35);
-    width: 100%;
+.form-list {
+    margin: auto;
+    max-width: 90%;
+    background-color: #f7f7f7;
+    padding: 3em 2em;
 }
 
 .form select {
@@ -127,15 +118,6 @@ table {
     height: 2.5em;
 }
 
-
-
-/* login form */
-
-.form {
-    margin: auto;
-    width: 90%;
-    padding: 3em;
-}
 
 .input-form {
     font-size: 1.2em;
@@ -160,6 +142,7 @@ table {
     border-radius: 0;
     box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.2);
     width: 100%;
+    height: 4em;
 }
 
 .add-btn:focus {
@@ -167,7 +150,7 @@ table {
 }
 
 .add-btn:hover {
-    transition: 0.5s ease;
+    transition: 0.4s ease;
     background-color: #aacbd5;
     /* border: 2px solid black; */
     border-radius: 2px;
@@ -176,35 +159,95 @@ table {
 
 
 
+/* search */
+
+.search {
+    height: 7em;
+}
+
+.search-bar {
+    width: 85%;
+    height: 5em;
+    font-size: 1.4em;
+    padding: 0 1em;
+}
+
+.search-btn {
+    background-color: #252525;
+    color: rgb(233, 233, 233);
+    width: 14%;
+    height: 5em;
+    font-size: 1.4em;
+    border: none;
+    transition: 0.5s ease;
+}
+
+.search-btn:hover {
+    background-color: rgb(0, 0, 0);
+    color: rgb(233, 233, 233);
+    border: none;
+}
+
+
+
+/* table */
+table {
+    font-family: arial, sans-serif;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+.fa-minus {
+    color: red;
+}
+
 
 
 @media screen and (max-width: 772px) {
 
-    
+
+    .topnav a {
+        font-size: 1.4em;
+        padding: 1.5em;
+        border: 0.5px solid rgb(212, 212, 212);
+    }
+
     .form select {
         font-size: 1.4em;
         width: 8em;
         height: 2.5em;
     }
-    .search-bar{
-        width: 85%;
-        height: 5em;
-        font-size: 1.4em;
-        padding: 0 1em;
+
+    /* table */
+    table {
+        font-family: arial, sans-serif;
+        width: 100%;
+        font-size: 1.3em;
     }
-    .search-btn{
-        background-color: rgb(37, 37, 37);
-        color: rgb(233, 233, 233);
-        width: 14%;
-        height: 5em;
-        font-size: 1.4em;
-        border:none;
-        transition: 0.5s ease;
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 10px;
     }
-    .search-btn:hover{
-        background-color: rgb(0, 0, 0);
-        color: rgb(233, 233, 233);
-        border:none;
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .fa-minus {
+        color: red;
     }
 
 }

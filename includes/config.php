@@ -3,8 +3,12 @@
 // starta session
 session_start();
 
-//utseende
 // $site_title
+global $pageTitle;
+$pageTitle['page1'] = "Index";
+$pageTitle['page2'] = "Inventory";
+$pageTitle['page3'] = "Lista";
+
 // $divider 
 
 // ladda klasser
@@ -32,5 +36,3 @@ if ($devmode) { // om $devmode = true;
 } else{
     //databasinsätllningar - publicerat
 }
-
-?>
