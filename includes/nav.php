@@ -15,9 +15,9 @@ $pages = array(
     foreach ($pages as $page => $page_filename) {
         $current = basename($_SERVER['SCRIPT_FILENAME']);
         if ($page_filename == $current) {
-            echo "<a href='$page_filename' class='active'>$page</a>\n";
+            echo "<a aria-label='link' value='link' href='$page_filename' class='active'>$page</a>\n";
         } else {
-            echo "<a href='$page_filename'>$page</a>\n";
+            echo "<a aria-label='link' value='link' href='$page_filename'>$page</a>\n";
         }
     }
     ?>
