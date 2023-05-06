@@ -1,8 +1,8 @@
 <?php
 $pages = array(
-    "Hem" => "index.php",
-    "Om sidan" => "inventory.php",
-    "Kontakt" => "list.php"
+    "Lägg till" => "index.php",
+    "Inventory" => "inventory.php",
+    "Lista" => "list.php"
 );
 ?>
 <form method="POST" class="search">
