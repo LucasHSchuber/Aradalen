@@ -108,7 +108,7 @@ if (isset($_SESSION['paymentcreated'])) {
                             <td>" . $inventory['product'] . "</td>
                             <td>" . $inventory['amount'] .  "</td>
                             <td>" . $inventory['sort'] . "</td>
-                            <td> <a class='delete' href='list.php?delete=" . $inventory['id'] . "'> Ta bort &nbsp; <i class='fa-solid fa-minus'></i></a> </td>
+                            <td> <a class='delete' href='index.php?delete=" . $inventory['id'] . "'> Ta bort &nbsp; <i class='fa-solid fa-minus'></i></a> </td>
                         </tr>
                   
                     ";

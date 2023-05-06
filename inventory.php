@@ -62,7 +62,7 @@ include("includes/config.php");
                             <td>" . $inventory['product'] . "</td>
                             <td>" . $inventory['amount'] .  "</td>
                             <td>" . $inventory['sort'] . "</td>
-                            <td> <a class='delete' href='list.php?delete=" . $inventory['id'] . "'> Ta bort &nbsp; <i class='fa-solid fa-minus'></i></a> </td>
+                            <td> <a class='delete' href='inventory.php?delete=" . $inventory['id'] . "'> Ta bort &nbsp; <i class='fa-solid fa-minus'></i></a> </td>
                         </tr>
                     ";
                 }
@@ -112,7 +112,7 @@ include("includes/config.php");
                             <td>" . $inventory['product'] . "</td>
                             <td>" . $inventory['amount'] .  "</td>
                             <td>" . $inventory['sort'] . "</td>
-                            <td> <a class='delete' href='list.php?delete=" . $inventory['id'] . "'>Ta bort &nbsp;  <i class='fa-solid fa-minus'></i></a> </td>
+                            <td> <a class='delete' href='inventory.php?delete=" . $inventory['id'] . "'>Ta bort &nbsp;  <i class='fa-solid fa-minus'></i></a> </td>
                         </tr>
                   
                     ";
